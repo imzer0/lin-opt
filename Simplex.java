@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Simplex {
     public static void main (String [] args){
 
-        double [][] arr = new double [][]{
+       double [][] arr = new double [][]{
             {1, 2, 1, 0, 0, 10},
             {1, 1, 0, 1, 0, 8},
             {3, 5, 0, 0, 1, 26},
@@ -22,9 +22,21 @@ public class Simplex {
             pivot(arr, outCol, outRow);
             printTableau(arr);
             System.out.println("\n_____________________________");
+            if (ObjectiveRowCheck(arr[arr.length-1])){
+                break;
+            }
             outCol = outCol(arr[arr.length-1]);
             outRow = outRow(arr, outCol);
         }
+    }
+
+    public static boolean ObjectiveRowCheck(double [] OR){
+        for (int i = 0; i < OR.length; i++){
+                if (OR[i] < 0){
+                    return false;
+                }
+        }
+        return true;
     }
    
     public static void printTableau (double [][] arr){
