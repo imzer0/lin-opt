@@ -31,7 +31,7 @@ public class Simplex {
     }
 
     public static boolean ObjectiveRowCheck(double [] OR){
-        for (int i = 0; i < OR.length; i++){
+        for (int i = 0; i < OR.length-1; i++){
                 if (OR[i] < 0){
                     return false;
                 }
