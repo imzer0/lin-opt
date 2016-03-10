@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 public class Dual{
         //Only works with LPP's in standard form for now
+        //Variables are named after their vector/matix of the matrix notation for the LPP
         public static void main (String [] args){
                 double [] c = new double []{3, 8, 7};
                 double [][] A = new double [][]{
