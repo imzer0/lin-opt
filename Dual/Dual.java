@@ -54,7 +54,7 @@ public class Dual{
                 for (i = 0; i < lpp.c.length-1; i++){
                         System.out.print(lpp.c[i] + var + i + " + "); 
                 }
-                System.out.println(lpp.c[i] + var + "\nSubject to");
+                System.out.println(lpp.c[i] + var + i + "\nSubject to");
                 //Prints contraints
                 for (i = 0; i < lpp.A.length; i++){
                         for (j = 0; j < lpp.A[i].length-1; j++){
