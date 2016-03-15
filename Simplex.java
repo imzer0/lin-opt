@@ -22,23 +22,11 @@ public class Simplex {
             pivot(arr, outCol, outRow);
             printTableau(arr);
             System.out.println("\n_____________________________");
-            if (ObjectiveRowCheck(arr[arr.length-1])){
-                break;
-            }
             outCol = outCol(arr[arr.length-1]);
             outRow = outRow(arr, outCol);
         }
     }
 
-    public static boolean ObjectiveRowCheck(double [] OR){
-        for (int i = 0; i < OR.length-1; i++){
-                if (OR[i] < 0){
-                    return false;
-                }
-        }
-        return true;
-    }
-   
     public static void printTableau (double [][] arr){
         for (int i = 0; i < arr.length; i++) {
                 for (int j = 0; j < arr[0].length; j++) {
@@ -71,6 +59,9 @@ public class Simplex {
     public static int outRow(double [][] arr, int outCol){
         int index = -1;
         double minTheta = Double.MAX_VALUE;
+        if (outCol < 0){
+            return -1;
+        }
         for (int i = 0; i <arr.length-1; i++){
             double theta = arr[i][arr[0].length-1] / arr[i][outCol];
             if (theta > 0){
